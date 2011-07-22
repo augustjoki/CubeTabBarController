@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97E045AC13D93155001B9A46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E045AB13D93155001B9A46 /* UIKit.framework */; };
+		97E045AE13D93155001B9A46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E045AD13D93155001B9A46 /* Foundation.framework */; };
+		97E045B013D93155001B9A46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E045AF13D93155001B9A46 /* CoreGraphics.framework */; };
+		97E045B613D93155001B9A46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97E045B413D93155001B9A46 /* InfoPlist.strings */; };
+		97E045B813D93155001B9A46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E045B713D93155001B9A46 /* main.m */; };
+		97E045BC13D93155001B9A46 /* CubeTabBarControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E045BB13D93155001B9A46 /* CubeTabBarControllerAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		97E045A713D93155001B9A46 /* CubeTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubeTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E045AB13D93155001B9A46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		97E045AD13D93155001B9A46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		97E045AF13D93155001B9A46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		97E045B313D93155001B9A46 /* CubeTabBarController-Info.plist */ = {isa = PBXFileReference; path = "CubeTabBarController-Info.plist"; sourceTree = "<group>"; };
+		97E045B513D93155001B9A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		97E045B713D93155001B9A46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		97E045B913D93155001B9A46 /* CubeTabBarController-Prefix.pch */ = {isa = PBXFileReference; path = "CubeTabBarController-Prefix.pch"; sourceTree = "<group>"; };
+		97E045BA13D93155001B9A46 /* CubeTabBarControllerAppDelegate.h */ = {isa = PBXFileReference; path = CubeTabBarControllerAppDelegate.h; sourceTree = "<group>"; };
+		97E045BB13D93155001B9A46 /* CubeTabBarControllerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CubeTabBarControllerAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97E045A413D93155001B9A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97E045AC13D93155001B9A46 /* UIKit.framework in Frameworks */,
+				97E045AE13D93155001B9A46 /* Foundation.framework in Frameworks */,
+				97E045B013D93155001B9A46 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97E0459C13D93155001B9A46 = {
+			isa = PBXGroup;
+			children = (
+				97E045B113D93155001B9A46 /* CubeTabBarController */,
+				97E045AA13D93155001B9A46 /* Frameworks */,
+				97E045A813D93155001B9A46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97E045A813D93155001B9A46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97E045A713D93155001B9A46 /* CubeTabBarController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97E045AA13D93155001B9A46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97E045AB13D93155001B9A46 /* UIKit.framework */,
+				97E045AD13D93155001B9A46 /* Foundation.framework */,
+				97E045AF13D93155001B9A46 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97E045B113D93155001B9A46 /* CubeTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				97E045BA13D93155001B9A46 /* CubeTabBarControllerAppDelegate.h */,
+				97E045BB13D93155001B9A46 /* CubeTabBarControllerAppDelegate.m */,
+				97E045B213D93155001B9A46 /* Supporting Files */,
+			);
+			path = CubeTabBarController;
+			sourceTree = "<group>";
+		};
+		97E045B213D93155001B9A46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97E045B313D93155001B9A46 /* CubeTabBarController-Info.plist */,
+				97E045B413D93155001B9A46 /* InfoPlist.strings */,
+				97E045B713D93155001B9A46 /* main.m */,
+				97E045B913D93155001B9A46 /* CubeTabBarController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97E045A613D93155001B9A46 /* CubeTabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97E045BF13D93155001B9A46 /* Build configuration list for PBXNativeTarget "CubeTabBarController" */;
+			buildPhases = (
+				97E045A313D93155001B9A46 /* Sources */,
+				97E045A413D93155001B9A46 /* Frameworks */,
+				97E045A513D93155001B9A46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CubeTabBarController;
+			productName = CubeTabBarController;
+			productReference = 97E045A713D93155001B9A46 /* CubeTabBarController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97E0459E13D93155001B9A46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Concinnous Software";
+			};
+			buildConfigurationList = 97E045A113D93155001B9A46 /* Build configuration list for PBXProject "CubeTabBarController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 97E0459C13D93155001B9A46;
+			productRefGroup = 97E045A813D93155001B9A46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97E045A613D93155001B9A46 /* CubeTabBarController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97E045A513D93155001B9A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97E045B613D93155001B9A46 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97E045A313D93155001B9A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97E045B813D93155001B9A46 /* main.m in Sources */,
+				97E045BC13D93155001B9A46 /* CubeTabBarControllerAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97E045B413D93155001B9A46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97E045B513D93155001B9A46 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97E045BD13D93155001B9A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97E045BE13D93155001B9A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97E045C013D93155001B9A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CubeTabBarController/CubeTabBarController-Prefix.pch";
+				INFOPLIST_FILE = "CubeTabBarController/CubeTabBarController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		97E045C113D93155001B9A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CubeTabBarController/CubeTabBarController-Prefix.pch";
+				INFOPLIST_FILE = "CubeTabBarController/CubeTabBarController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97E045A113D93155001B9A46 /* Build configuration list for PBXProject "CubeTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97E045BD13D93155001B9A46 /* Debug */,
+				97E045BE13D93155001B9A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97E045BF13D93155001B9A46 /* Build configuration list for PBXNativeTarget "CubeTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97E045C013D93155001B9A46 /* Debug */,
+				97E045C113D93155001B9A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97E0459E13D93155001B9A46 /* Project object */;
+}
