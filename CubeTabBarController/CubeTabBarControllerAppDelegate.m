@@ -8,16 +8,39 @@
 
 #import "CubeTabBarControllerAppDelegate.h"
 
+#import "CubeTabBarController.h"
+
 @implementation CubeTabBarControllerAppDelegate
 
-@synthesize window = _window;
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+	
+	
+	// creating a set of view controllers with which to test out the animation
+	// label is skewed to see the 3d-ness better
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	for (int ii = 0; ii < 5; ii++) {
+		UIViewController *vc = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+		vc.view.backgroundColor = [UIColor colorWithWhite:(ii+1) * 0.2 alpha:1.0];
+		UILabel *label = [[UILabel alloc] init];
+		label.font = [UIFont systemFontOfSize:36];
+		label.text = [NSString stringWithFormat:@"View Controller %d", ii];
+		[label sizeToFit];
+		vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"%d", ii] image:nil tag:0];
+		[vc.view addSubview:label];
+		label.center = vc.view.center;
+		label.transform = CGAffineTransformMakeRotation(M_PI_4);
+		[array addObject:vc];
+	}
+	
+	CubeTabBarController *ctbc = [[CubeTabBarController alloc] initWithNibName:nil bundle:nil];
+	ctbc.viewControllers = array;
+	self.window.rootViewController = ctbc;
+	
     return YES;
 }
 
