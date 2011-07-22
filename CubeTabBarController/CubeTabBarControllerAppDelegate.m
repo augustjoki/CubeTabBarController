@@ -10,9 +10,16 @@
 
 #import "CubeTabBarController.h"
 
+@interface CubeTabBarControllerAppDelegate () <UITabBarControllerDelegate>
+
+@property(nonatomic, strong) CubeTabBarController *cubeTabBarController;
+
+@end
+
 @implementation CubeTabBarControllerAppDelegate
 
 @synthesize window;
+@synthesize cubeTabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -37,9 +44,10 @@
 		[array addObject:vc];
 	}
 	
-	CubeTabBarController *ctbc = [[CubeTabBarController alloc] initWithNibName:nil bundle:nil];
-	ctbc.viewControllers = array;
-	self.window.rootViewController = ctbc;
+	self.cubeTabBarController = [[CubeTabBarController alloc] initWithNibName:nil bundle:nil];
+	self.cubeTabBarController.delegate = self;
+	self.cubeTabBarController.viewControllers = array;
+	self.window.rootViewController = self.cubeTabBarController;
 	
     return YES;
 }
@@ -81,6 +89,14 @@
 	 Save data if appropriate.
 	 See also applicationDidEnterBackground:.
 	 */
+}
+
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+	CubeTabBarControllerAnimation animation = (arc4random() % 3) - 1; // choose -1, 0, 1
+	self.cubeTabBarController.animation = animation;
 }
 
 @end

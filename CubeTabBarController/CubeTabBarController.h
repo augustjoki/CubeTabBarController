@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+// defaults to looking at the cube from the outside
+typedef enum {
+	CubeTabBarControllerAnimationNone = -1,
+	CubeTabBarControllerAnimationOutside = 0,
+	CubeTabBarControllerAnimationInside
+} CubeTabBarControllerAnimation;
+
 @interface CubeTabBarController : UITabBarController
+
+@property(nonatomic, assign) CubeTabBarControllerAnimation animation;
 
 @end

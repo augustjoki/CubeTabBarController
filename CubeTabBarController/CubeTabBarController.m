@@ -12,8 +12,15 @@
 
 @implementation CubeTabBarController
 
+@synthesize animation;
+
 - (void)setSelectedViewController:(UIViewController *)next
 {
+	if (self.animation == CubeTabBarControllerAnimationNone) {
+		[super setSelectedViewController:next];
+		return;
+	}
+	
 	if (next == self.selectedViewController) {
 		return;
 	}
@@ -41,9 +48,23 @@
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
 	CATransform3D transform = CATransform3DIdentity;
-	transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
-	transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? M_PI_2 : -M_PI_2, 0, 1, 0);
-	transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
+	
+	// yes, this switch has a bit of redundant code, but not sure yet if other animations will follow the same pattern
+	switch (self.animation) {
+		case CubeTabBarControllerAnimationOutside:
+			transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
+			transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? M_PI_2 : -M_PI_2, 0, 1, 0);
+			transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
+			break;
+		case CubeTabBarControllerAnimationInside:
+			transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
+			transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? -M_PI_2 : M_PI_2, 0, 1, 0);
+			transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
+			break;
+		default:
+			break;
+	}
+	
 	next.view.layer.transform = transform;
 	[CATransaction commit];
 	
@@ -61,22 +82,34 @@
 		self.view.userInteractionEnabled = YES;
 	}];
 	
-	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+	CABasicAnimation *transformAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
 	
 	transform = CATransform3DIdentity;
 	transform.m34 = perspective;
-	animation.fromValue = [NSValue valueWithCATransform3D:transform];
+	transformAnimation.fromValue = [NSValue valueWithCATransform3D:transform];
 	
 	transform = CATransform3DIdentity;
 	transform.m34 = perspective;
-	transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
-	transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? -M_PI_2 : M_PI_2, 0, 1, 0);
-	transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
-	animation.toValue = [NSValue valueWithCATransform3D:transform];
+	switch (self.animation) {
+		case CubeTabBarControllerAnimationOutside:
+			transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
+			transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? -M_PI_2 : M_PI_2, 0, 1, 0);
+			transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
+			break;
+		case CubeTabBarControllerAnimationInside:
+			transform = CATransform3DTranslate(transform, 0, 0, halfWidth);
+			transform = CATransform3DRotate(transform, (nextIndex > self.selectedIndex) ? M_PI_2 : -M_PI_2, 0, 1, 0);
+			transform = CATransform3DTranslate(transform, 0, 0, -halfWidth);
+			break;
+		default:
+			break;
+	}
 	
-	animation.duration = duration;
+	transformAnimation.toValue = [NSValue valueWithCATransform3D:transform];
 	
-	[transformLayer addAnimation:animation forKey:@"rotate"];
+	transformAnimation.duration = duration;
+	
+	[transformLayer addAnimation:transformAnimation forKey:@"rotate"];
 	transformLayer.transform = transform;
 	
 	[CATransaction commit];
