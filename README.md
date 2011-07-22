@@ -5,6 +5,6 @@ The normal switching between view controllers on UITabBarControllers is boring. 
 
 I actually started with using iOS 5's container api and got it working with that, but then tried to see whether I could get it to work with a subclass of UITabBarController.
 
-![Mid rotation](midrotation.png)
+![Mid rotation](https://github.com/augustjoki/CubeTabBarController/raw/master/midrotation.png)
 
 NOTE: This project is built with ARC if you need to use it with MRR you'll have to add all the proper methods.
