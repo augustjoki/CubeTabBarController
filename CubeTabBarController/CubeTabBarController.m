@@ -71,10 +71,7 @@
 	[CATransaction begin];
 	[CATransaction setCompletionBlock:^(void) {
 		[next.view.layer removeFromSuperlayer];
-		[CATransaction begin];
-		[CATransaction setDisableActions:YES];
 		next.view.layer.transform = CATransform3DIdentity;
-		[CATransaction commit];
 		[current.view.layer removeFromSuperlayer];
 		[superView addSubview:current.view];
 		[transformLayer removeFromSuperlayer];

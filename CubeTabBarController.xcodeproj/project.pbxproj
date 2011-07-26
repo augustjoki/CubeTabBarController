@@ -125,6 +125,7 @@
 		97E0459E13D93155001B9A46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Concinnous Software";
 			};
 			buildConfigurationList = 97E045A113D93155001B9A46 /* Build configuration list for PBXProject "CubeTabBarController" */;
@@ -268,6 +269,7 @@
 				97E045C113D93155001B9A46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
