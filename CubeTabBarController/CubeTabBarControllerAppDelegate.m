@@ -14,18 +14,22 @@
 
 @property(nonatomic, strong) CubeTabBarController *cubeTabBarController;
 
+@property(nonatomic, strong) NSArray *colorArray;
+
 @end
 
 @implementation CubeTabBarControllerAppDelegate
 
 @synthesize window;
 @synthesize cubeTabBarController;
+@synthesize colorArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
 	
+	self.colorArray = [[NSArray alloc] initWithObjects:[UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor purpleColor], nil];
 	
 	// creating a set of view controllers with which to test out the animation
 	// label is skewed to see the 3d-ness better
@@ -46,6 +50,7 @@
 	
 	self.cubeTabBarController = [[CubeTabBarController alloc] initWithNibName:nil bundle:nil];
 	self.cubeTabBarController.delegate = self;
+	self.cubeTabBarController.backgroundColor = [self.colorArray objectAtIndex:0];
 	self.cubeTabBarController.viewControllers = array;
 	self.window.rootViewController = self.cubeTabBarController;
 	
@@ -97,6 +102,7 @@
 {
 	CubeTabBarControllerAnimation animation = (arc4random() % 3) - 1; // choose -1, 0, 1
 	self.cubeTabBarController.animation = animation;
+	self.cubeTabBarController.backgroundColor = [self.colorArray objectAtIndex:(arc4random() % self.colorArray.count)];
 }
 
 @end
