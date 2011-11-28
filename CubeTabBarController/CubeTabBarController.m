@@ -13,6 +13,7 @@
 @implementation CubeTabBarController
 
 @synthesize animation;
+@synthesize backgroundColor;
 
 - (void)setSelectedViewController:(UIViewController *)next
 {
@@ -45,6 +46,10 @@
 	[transformLayer addSublayer:next.view.layer];
 	[superView.layer addSublayer:transformLayer];
 	
+	// let's be safe about setting stuff on view's we don't control
+	UIColor *originalBackgroundColor = superView.backgroundColor;
+	superView.backgroundColor = self.backgroundColor;
+	
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
 	CATransform3D transform = CATransform3DIdentity;
@@ -73,6 +78,7 @@
 		[next.view.layer removeFromSuperlayer];
 		next.view.layer.transform = CATransform3DIdentity;
 		[current.view.layer removeFromSuperlayer];
+		superView.backgroundColor = originalBackgroundColor;
 		[superView addSubview:current.view];
 		[transformLayer removeFromSuperlayer];
 		[super setSelectedViewController:next];

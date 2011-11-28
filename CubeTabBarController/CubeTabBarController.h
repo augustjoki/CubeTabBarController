@@ -18,5 +18,6 @@ typedef enum {
 @interface CubeTabBarController : UITabBarController
 
 @property(nonatomic, assign) CubeTabBarControllerAnimation animation;
+@property(nonatomic, retain) UIColor *backgroundColor;
 
 @end
